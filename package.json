@@ -1,0 +1,67 @@
+{
+  "name": "pica-kit-library",
+  "version": "1.0.2",
+  "description": "pica starterkit for library development based on rollup and karma",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "scripts": {
+    "dist": "rollup -c ./tools/rollup.base.js",
+    "dev": "rollup -c ./tools/rollup.base.js -w",
+    "start": "npm run dev",
+    "lint": "eslint src",
+    "test": "cross-env BABEL_ENV=test NODE_ENV=production KARMA_ENV=karma node ./tools/script.js",
+    "pretest": "npm run lint && npm run dist",
+    "travis": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picateam/pica-kit-library.git"
+  },
+  "keywords": [
+    "pica starterkit",
+    "rollup",
+    "karma",
+    "library"
+  ],
+  "author": "heyli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/picateam/pica-kit-library/issues"
+  },
+  "homepage": "https://github.com/picateam/pica-kit-library#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "chai": "^4.2.0",
+    "codecov.io": "^0.1.6",
+    "coveralls": "^3.0.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-alloy": "^1.4.2",
+    "karma": "^4.0.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^2.0.5",
+    "karma-mocha": "^1.3.0",
+    "karma-rollup-preprocessor": "^7.0.0",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.32",
+    "mocha": "^6.1.2",
+    "rollup": "^1.9.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-clean": "^1.0.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-istanbul": "^2.0.1",
+    "rollup-plugin-node-resolve": "^4.2.1",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
